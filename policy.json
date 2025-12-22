@@ -1,0 +1,135 @@
+{
+  "pack_id": "PP-HIGH-IMPACT-DECISION-SUPPORT",
+  "pack_name": "High-Impact Decision Support PolicyPack",
+  "version": "1.0.0",
+  "status": "published",
+
+  "release_utc": "2025-12-21T00:00:00Z",
+
+  "root_identity": "tux133144.eth",
+
+  "policy_positioning": {
+    "non_binding": true,
+    "reference_only": true,
+    "design_time_policy": true,
+    "non_executive": true
+  },
+
+  "legal_and_compliance_notice": {
+    "no_legal_advice": true,
+    "no_financial_or_investment_advice": true,
+    "no_medical_or_psychological_advice": true,
+    "no_professional_certification": true,
+    "no_regulatory_substitution": true
+  },
+
+  "scope": {
+    "applies_to": [
+      "decision_support_systems",
+      "recommendation_interfaces",
+      "planning_and_guidance_tools",
+      "high_impact_financial_contexts",
+      "life_and_relationship_decision_interfaces"
+    ],
+    "audience": [
+      "implementers",
+      "product_design",
+      "trust_and_safety",
+      "legal_review",
+      "compliance_and_audit"
+    ]
+  },
+
+  "interpretation_notice": "All rules, triggers, and signals defined in this PolicyPack are descriptive and interpretive only. They do not constitute executable logic. Mapping to system behavior, disclosures, user flows, or escalation processes is entirely the responsibility of the implementing party.",
+
+  "decision_context_definition": {
+    "high_impact_decision_context": "A context in which an AI-generated output may materially influence financial outcomes, legal exposure, safety, long-term commitments, or irreversible life or relationship decisions."
+  },
+
+  "signals": {
+    "HUMAN_CONFIRM_REQUIRED": "Human confirmation, reflection, or review is expected before continuing automated guidance in a high-impact decision context.",
+    "ALLOW_WITH_CONTEXT": "Guidance may proceed with contextual safeguards defined by the implementer.",
+    "BLOCK": "The implementing system should avoid providing certain categories of guidance in this context and may route to safer alternatives."
+  },
+
+  "rules": [
+    {
+      "id": "HI-01",
+      "title": "High-impact decision context detected",
+      "description": "The interaction involves decisions with material consequences, including financial risk, legal exposure, safety implications, or irreversible commitments.",
+      "trigger": "high_impact_decision_context == true",
+      "action": "HUMAN_CONFIRM_REQUIRED"
+    },
+    {
+      "id": "HI-02",
+      "title": "Material financial risk context",
+      "description": "The interaction involves substantial financial commitments, transfers, debt, or actions likely to create material financial loss.",
+      "trigger": "material_financial_risk == true",
+      "action": "HUMAN_CONFIRM_REQUIRED"
+    },
+    {
+      "id": "HI-03",
+      "title": "Requests for direct financial or investment instructions",
+      "description": "The user requests explicit instructions intended to directly execute or time specific financial or investment actions.",
+      "trigger": "requests_direct_financial_or_investment_instructions == true",
+      "action": "BLOCK"
+    },
+    {
+      "id": "HI-04",
+      "title": "Responsibility transfer framing",
+      "description": "Language implies that the system, rather than the human user, is responsible for the decision or its outcome.",
+      "trigger": "responsibility_transfer_language_detected == true && high_impact_decision_context == true",
+      "action": "HUMAN_CONFIRM_REQUIRED"
+    },
+    {
+      "id": "HI-05",
+      "title": "Single-path certainty in high-impact context",
+      "description": "The system presents one outcome as the only correct path or suppresses uncertainty or alternatives.",
+      "trigger": "single_path_certainty_framing == true && high_impact_decision_context == true",
+      "action": "HUMAN_CONFIRM_REQUIRED"
+    },
+    {
+      "id": "HI-06",
+      "title": "Urgency or pressure tactics",
+      "description": "The interaction applies time pressure or urgency framing in a high-impact decision context.",
+      "trigger": "urgency_pressure_tactics == true && high_impact_decision_context == true",
+      "action": "HUMAN_CONFIRM_REQUIRED"
+    },
+    {
+      "id": "HI-07",
+      "title": "Personalization increasing persuasive pressure",
+      "description": "Use of personalization or behavioral targeting that increases persuasive pressure in a high-impact decision context.",
+      "trigger": "personalization_increases_persuasive_pressure == true && high_impact_decision_context == true",
+      "action": "HUMAN_CONFIRM_REQUIRED"
+    },
+    {
+      "id": "HI-08",
+      "title": "Low-impact informational assistance",
+      "description": "The interaction is informational or exploratory without material consequences.",
+      "trigger": "low_impact_planning_assistance == true",
+      "action": "ALLOW_WITH_CONTEXT"
+    }
+  ],
+
+  "data_and_ai_use_limits": {
+    "no_behavioral_profiling_requirement": true,
+    "no_emotional_or_psychological_inference_requirement": true,
+    "no_model_training_claim": true,
+    "implementer_defined_data_handling": true
+  },
+
+  "execution_and_liability_boundary": {
+    "no_autonomous_enforcement": true,
+    "no_system_control": true,
+    "implementer_owned_execution": true,
+    "implementer_owned_compliance": true
+  },
+
+  "liability_boundary_notice": "This PolicyPack does not operate, control, monitor, or enforce any system behavior. It does not provide professional advice. All interpretation, implementation, execution, compliance, and resulting outcomes are solely the responsibility of the implementing party.",
+
+  "versioning_notes": {
+    "semantic_stability_intended": true,
+    "additive_changes_preferred": true,
+    "no_update_or_maintenance_obligation": true
+  }
+}
