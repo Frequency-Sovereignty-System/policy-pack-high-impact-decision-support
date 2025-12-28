@@ -5,6 +5,8 @@ may materially influence human outcomes.
 It is intended **solely for design-time review and risk identification**,
 and **not for execution, enforcement, or the provision of professional advice**
 (including legal, financial, medical, or psychological advice).
+Authoritative references for this PolicyPack are published via this GitHub repository.
+ENS records are used solely for identity and provenance anchoring.
 
 ---
 
