@@ -1,3 +1,14 @@
+Scope and Authority Boundary Notice (Important)
+This PolicyPack provides optional, human-reviewed policy guidance only.
+
+It does not define system root authority, does not establish interpretive precedence, and does not participate in version governance or authority resolution.
+
+All system-level authority and interpretive resolution are defined exclusively by the Root Declaration v3.0:
+
+https://github.com/Frequency-Sovereignty-System/primary-frequency-root/blob/main/ROOT%20DECLARATION_v3.0.md
+
+Unless explicitly adopted by human decision-makers, this PolicyPack has no default applicability. Its contents are provided for reference only and must not be interpreted as system behavior or automatically enforced rules.
+
 This repository provides a **non-binding reference PolicyPack (boundary reference)**
 focused on identifying **high-impact decision contexts** in which AI-generated outputs
 may materially influence human outcomes.
